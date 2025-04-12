@@ -1,4 +1,6 @@
 services:
+
+#streamlit application 
   app:
     build: ./app
     container_name: web-app
@@ -7,6 +9,7 @@ services:
     ports:
       - 8501:8501
 
+#flask api
   api:
     build: ./api
     container_name: web-api
@@ -15,6 +18,7 @@ services:
     ports:
       - 4000:4000
 
+#database
   db:
     env_file:
       - ./api/.env
