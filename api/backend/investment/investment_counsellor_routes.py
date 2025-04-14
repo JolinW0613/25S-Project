@@ -12,6 +12,7 @@ from backend.db_connection import db
 
 investment_counsellor_bp = Blueprint('investment_counsellor', __name__)
 
+
 @investment_counsellor_bp.route('/projects/opportunities', methods=['GET'])
 def get_investment_opportunities():
     current_app.logger.info('GET /investment counsello route')
