@@ -89,13 +89,12 @@ def update_artist_payment(artist_id):
     return response
 
 # ------------------------------------------------------------
-# ------------------------------------------------------------
 # GET /<int:artist_id>/history
 # Retrieve past performance history for the artist, including total earnings
 @artist_bp.route('/<int:artist_id>/history', methods=['GET'])
 def get_artist_history(artist_id):
     current_app.logger.info(f'GET /history handler for artist_id: {artist_id}')
-    cutoff_date = request.args.get('cutoff')
+    cutoff_date = request.args.get('cutoff', '2024-03-01')
     query = """
         SELECT p.performance_id,
                p.title,
@@ -149,7 +148,7 @@ def get_artist_insights(artist_id):
                AVG(pay.amount) AS avg_earnings
         FROM Performance p
         JOIN Contract c ON p.performance_id = c.performance_id
-        LEFT JOIN Payment pay ON pay.artist_id = c.artist_id AND pay.source = p.title
+        JOIN Payment pay ON pay.artist_id = c.artist_id AND pay.source = p.title
         WHERE c.artist_id = %s
         GROUP BY p.performance_type
         ORDER BY total_earnings DESC
