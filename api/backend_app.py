@@ -15,3 +15,10 @@ if __name__ == '__main__':
     # Take a look at the docker-compose.yml to see 
     # what port this might be mapped to... 
     app.run(debug = True, host = '0.0.0.0', port = 4000)
+
+from backend.rest_entry import create_app
+
+app = create_app()
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=4000, debug=True)

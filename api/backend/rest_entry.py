@@ -1,9 +1,14 @@
 from flask import Flask
 
 from backend.db_connection import db
-from backend.customers.customer_routes import customers
-from backend.products.products_routes import products
-from backend.simple.simple_routes import simple_routes
+# from backend.customers.customer_routes import customers
+# from backend.products.products_routes import products
+# from backend.simple.simple_routes import simple_routes
+from backend.investment.investment_counsellor_routes import investment_counsellor_bp
+from backend.artist.artist_routes import artist_bp
+from backend.artist_manager.artist_manager_routes import artist_manager
+from backend.platform_manager.platform_manager_routes import pManager 
+
 import os
 from dotenv import load_dotenv
 
@@ -39,9 +44,13 @@ def create_app():
     # Register the routes from each Blueprint with the app object
     # and give a url prefix to each
     app.logger.info('current_app(): registering blueprints with Flask app object.')   
-    app.register_blueprint(simple_routes)
-    app.register_blueprint(customers,   url_prefix='/c')
-    app.register_blueprint(products,    url_prefix='/p')
+    # app.register_blueprint(simple_routes)
+    # app.register_blueprint(customers,   url_prefix='/c')
+    # app.register_blueprint(products,    url_prefix='/p')
+    app.register_blueprint(investment_counsellor_bp,   url_prefix='/in')
+    app.register_blueprint(artist_bp, url_prefix='/artist')
+    app.register_blueprint(artist_manager, url_prefix='/am')
+    app.register_blueprint(pManager, url_prefix='/pm')
 
     # Don't forget to return the app object
     return app
