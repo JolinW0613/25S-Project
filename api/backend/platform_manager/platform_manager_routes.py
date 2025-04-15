@@ -32,7 +32,7 @@ pManager = Blueprint('pManager', __name__)
 # and manager details, enabling the platform manager
 # to verify that personal information is securely
 # stored and linked to authorized personnel
-@pManager.route('/test1', methods=['GET'])
+@pManager.route('/artists', methods=['GET'])
 def get_test1():
     query = '''
         SELECT
@@ -81,7 +81,7 @@ ORDER BY
 # stability by monitoring performance schedules
 # in real-time.
 
-@pManager.route('/test2', methods=['GET'])
+@pManager.route('/performances', methods=['GET'])
 def get_test2():
     query = '''
         SELECT
@@ -136,7 +136,7 @@ ORDER BY
 # provide users with accurate decision-making insights.
 
 
-@pManager.route('/test3', methods=['GET'])
+@pManager.route('/projects', methods=['GET'])
 def get_test3():
     query = '''
         SELECT
@@ -191,7 +191,7 @@ ORDER BY
 #Purpose: To summarize artist details
 # (name, team, manager) and their active contract count
 
-@pManager.route('/test4', methods=['GET'])
+@pManager.route('/artist_contract', methods=['GET'])
 def get_test4():
     query = '''
         SELECT
@@ -246,7 +246,7 @@ ORDER BY
 # compliance with platform policies and financial
 # viability.
 
-@pManager.route('/test5', methods=['GET'])
+@pManager.route('/project_roi', methods=['GET'])
 def get_test5():
     query = '''
         SELECT
@@ -298,7 +298,7 @@ ORDER BY
 # quickly identify and address technical issues
 # reported by users, ensuring a responsive support system.
 
-@pManager.route('/test6', methods=['GET'])
+@pManager.route('/alerts', methods=['GET'])
 def get_test6():
     query = '''
         SELECT
