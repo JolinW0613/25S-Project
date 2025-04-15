@@ -21,6 +21,10 @@ pManager = Blueprint('pManager', __name__)
 #only routes 6, 10, and 12
 #are used in streamlit
 
+#route 6 GET
+#route 10 POST
+#route 12 DELETE
+
 
 
 #route 1 GET
