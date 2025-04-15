@@ -14,14 +14,12 @@ from backend.db_connection import db
 # routes.
 pManager = Blueprint('pManager', __name__)
 
-#When adding to the api backend
-#create a folder, platformManager
-#and create platformManager.py
-
-#or something whatever works
 
 
 #routes 1-6 correspond to the SQL queries
+
+#only routes 6, 10, and 12
+#are used in streamlit
 
 
 
