@@ -32,7 +32,7 @@ def PlatformManagerNav():
 # ------------------- Sidebar Links Controller -------------------
 
 def SideBarLinks(show_home=False):
-    st.sidebar.image("assets/logo.png", width=150)
+    st.sidebar.image("assets/StarFlow.png", width=150)
 
     # Redirect to home if not authenticated
     if "authenticated" not in st.session_state:

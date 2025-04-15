@@ -17,8 +17,8 @@ st.subheader("📡 All Unresolved Alerts")
 
 if st.button("🔄 Refresh Alert List", type="primary", use_container_width=True):
     try:
-        response = requests.get(f"{API_BASE}/test6")
-        logger.info(f"GET {API_BASE}/test6 → Status: {response.status_code}")
+        response = requests.get(f"{API_BASE}/pm/alerts")
+        logger.info(f"GET {API_BASE}/pm/alerts → Status: {response.status_code}")
 
         if response.status_code == 200:
             alerts = response.json()

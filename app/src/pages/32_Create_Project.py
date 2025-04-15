@@ -29,7 +29,7 @@ with st.form("create_project_form"):
             "platform_manager_id": platform_manager_id
         }
         try:
-            res = requests.post(f"{API_BASE}/project", json=payload)
+            res = requests.post(f"{API_BASE}/pm/project", json=payload)
             if res.status_code == 201:
                 st.success(f"✅ Project created successfully! ID: {res.json().get('project_id')}")
             else:

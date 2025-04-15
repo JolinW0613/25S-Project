@@ -12,7 +12,7 @@ project_id = st.number_input("Enter Project ID to Delete", step=1)
 
 if st.button("Delete Project", type="primary"):
     try:
-        res = requests.delete(f"{API_BASE}/project/{project_id}")
+        res = requests.delete(f"{API_BASE}/pm/project/{project_id}")
         if res.status_code == 200:
             st.success("✅ Project deleted successfully.")
         elif res.status_code == 404:
